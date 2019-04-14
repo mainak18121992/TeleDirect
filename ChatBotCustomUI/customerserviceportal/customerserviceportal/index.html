@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>DBS Truck Portal</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $("#flip").click(function () {
+                $("#chatBox").slideToggle("slow");
+            });
+
+            var id = "123456789";
+            var name = "Mainak Chatterjee";
+            var src = 'https://vasnow.azurewebsites.net/index.html?userid=' + id + '&userName=' + name;
+            $('#iframe').attr('src', src);
+        });
+
+
+
+    </script>
+    <style type="text/css">
+        body {
+            background-image: url('Images/backgroundImage.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #flip {
+            /*padding: 15px;*/
+            text-align: center;
+            /*background-color: #0078d7;*/
+            width: 50%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-radius: 20%;
+            width: 75px;
+            height: 75px;
+            border-radius: 75%;
+        }
+
+
+        .chat_box {
+            border: 1px;
+            overflow-y: hidden;
+            overflow-x:hidden;
+            text-align: left;
+            height: 500px;
+            width: 500px;
+            display: none;
+            background: rgba(255, 255, 255, 1);
+        }
+
+        #bot {
+            position: fixed;
+            bottom: 2%;
+            right: 1%;
+        }
+
+        .ac-pushButton {
+            border: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="bot">
+        <img id="flip" src="/Images/botIcon.png" />
+        <div id="chatBox" class="chat_box">
+            <iframe id="iframe" style="background-color:white ; height:100%;width:100%"></iframe>
+        </div>
+    </div>
+</body>
+</html>
